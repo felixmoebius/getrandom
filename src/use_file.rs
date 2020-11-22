@@ -21,7 +21,8 @@ const FILE_PATH: &str = "rand:\0";
     target_os = "haiku",
     target_os = "macos",
     target_os = "solaris",
-    target_os = "illumos"
+    target_os = "illumos",
+    target_os = "unikraft"
 ))]
 const FILE_PATH: &str = "/dev/random\0";
 #[cfg(any(target_os = "android", target_os = "linux"))]
