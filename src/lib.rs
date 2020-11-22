@@ -188,6 +188,7 @@ cfg_if! {
     target_os = "macos",
     target_os = "solaris",
     target_os = "illumos",
+    target_os = "unikraft"
 ))]
 mod use_file;
 
