@@ -170,7 +170,8 @@ cfg_if! {
     if #[cfg(any(target_os = "android", target_os = "dragonfly", target_os = "emscripten",
                  target_os = "freebsd", target_os = "haiku",     target_os = "illumos",
                  target_os = "linux",   target_os = "macos",     target_os = "netbsd",
-                 target_os = "openbsd", target_os = "redox",     target_os = "solaris"))] {
+                 target_os = "openbsd", target_os = "redox",     target_os = "solaris",
+                 target_os = "unikraft"))] {
         #[allow(dead_code)]
         mod util_libc;
         // Keep std-only trait definitions for backwards compatibility
@@ -213,6 +214,8 @@ cfg_if! {
     } else if #[cfg(target_os = "ios")] {
         #[path = "ios.rs"] mod imp;
     } else if #[cfg(target_os = "linux")] {
+        #[path = "linux_android.rs"] mod imp;
+    } else if #[cfg(target_os = "unikraft")] {
         #[path = "linux_android.rs"] mod imp;
     } else if #[cfg(target_os = "macos")] {
         #[path = "macos.rs"] mod imp;
