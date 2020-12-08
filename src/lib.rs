@@ -187,8 +187,7 @@ cfg_if! {
     target_os = "linux",
     target_os = "macos",
     target_os = "solaris",
-    target_os = "illumos",
-    target_os = "unikraft"
+    target_os = "illumos"
 ))]
 mod use_file;
 
@@ -217,7 +216,7 @@ cfg_if! {
     } else if #[cfg(target_os = "linux")] {
         #[path = "linux_android.rs"] mod imp;
     } else if #[cfg(target_os = "unikraft")] {
-        #[path = "linux_android.rs"] mod imp;
+        #[path = "unikraft.rs"] mod imp;
     } else if #[cfg(target_os = "macos")] {
         #[path = "macos.rs"] mod imp;
     } else if #[cfg(target_os = "netbsd")] {
